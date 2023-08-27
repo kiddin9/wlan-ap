@@ -8,10 +8,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=iw
-PKG_VERSION:=5.9
+PKG_VERSION:=15.9
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+PKG_SOURCE:=$(PKG_NAME)-5.9.tar.xz
 PKG_SOURCE_URL:=https://www.kernel.org/pub/software/network/iw
 PKG_HASH:=293a07109aeb7e36267cf59e3ce52857e9ffae3a6666eb8ac77894b1839fe1f2
 
