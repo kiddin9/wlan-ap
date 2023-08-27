@@ -8,12 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=iw
-PKG_VERSION:=5.9
+PKG_VERSION:=15.9
+VERSION:=5.9
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+PKG_SOURCE:=$(PKG_NAME)-$(VERSION).tar.xz
 PKG_SOURCE_URL:=https://www.kernel.org/pub/software/network/iw
 PKG_HASH:=293a07109aeb7e36267cf59e3ce52857e9ffae3a6666eb8ac77894b1839fe1f2
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(VERSION)
 
 PKG_MAINTAINER:=Felix Fietkau <nbd@openwrt.org>
 PKG_LICENSE:=GPL-2.0
@@ -36,7 +38,7 @@ define Package/iw-full
 endef
 
 define Build/Configure
-	echo "const char iw_version[] = \"$(PKG_VERSION)\";" > $(PKG_BUILD_DIR)/version.c
+	echo "const char iw_version[] = \"$(VERSION)\";" > $(PKG_BUILD_DIR)/version.c
 	rm -f $(PKG_BUILD_DIR)/version.sh
 	touch $(PKG_BUILD_DIR)/version.sh
 	chmod +x $(PKG_BUILD_DIR)/version.sh
